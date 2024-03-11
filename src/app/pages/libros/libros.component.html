@@ -1,0 +1,64 @@
+<div class="container">
+    <h4>Catálogo de libros</h4>
+    <div class="col-sm-4">
+        <label>
+            Título
+            <input type="text" class="form-control" [(ngModel)]="libro.titulo">
+        </label>
+        <br>
+        <label>
+            Autor
+            <input type="text" class="form-control" [(ngModel)]="libro.autor">
+        </label>
+        <br>
+        <label>
+            Editorial
+            <input type="text" class="form-control" [(ngModel)]="libro.editorial">
+        </label>
+        <br>
+        <label>
+            Año de publicación
+            <input type="text" class="form-control" [(ngModel)]="libro.year">
+        </label>
+        <br>
+        <br>
+        <table>
+            <tr>
+                <td>
+                    <button type="button" class="btn btn-primary" (click)="this.insertarLibro()">Insertar</button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-warning" (click)="this.updateLibro()">Actualizar</button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-danger" (click)="this.deleteLibro(libro.id)">Eliminar</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div class="container">
+    <h1>Catálogo de libros</h1>
+    <table class="table">
+        <thead>
+            <th>Título</th>
+            <th>Autor</th>
+            <th>Editorial</th>
+            <th>Año de publicación</th>
+            <th>Seleccionar</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let libro of libros">
+                <td>{{ libro.titulo }}</td>
+                <td>{{ libro.autor }}</td>
+                <td>{{ libro.editorial }}</td>
+                <td>{{ libro.year }}</td>
+                <td>
+                    <button type="button" class="btn btn-primary" (click)="selectLibro(libro)">Seleccionar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
