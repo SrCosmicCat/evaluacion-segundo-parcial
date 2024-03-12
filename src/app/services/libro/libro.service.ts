@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import Libro from '../models/libro';
+import Libro from '../../models/libro';
 
 @Injectable({
   providedIn: 'root'
@@ -26,5 +26,4 @@ export class LibroService {
   deleteLibro(id: string) {
     this.firestore.doc('libros/'+id).delete();
   }
-  
 }
